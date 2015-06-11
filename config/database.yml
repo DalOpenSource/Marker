@@ -3,3 +3,10 @@ development:
   encoding: utf8
   database: marker_dev
   username: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: marker_test
+  username: root
+

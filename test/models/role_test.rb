@@ -6,6 +6,6 @@ class RoleTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "query" do
-  	assert_not_nil david.roles.find_by_course(one).title
+  	assert_not_nil (users(:david)).roles.find_by_course_id(courses(:intro_cs).id).title
   end
 end
