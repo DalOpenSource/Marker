@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [:username]
   has_many :roles
+  has_many :courses, :through => :roles
   validates :username, :presence => true, :uniqueness => { :case_sensitive => false }
 end
