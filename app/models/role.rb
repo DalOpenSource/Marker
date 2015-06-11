@@ -9,4 +9,5 @@ class Role < ActiveRecord::Base
   validates :user_id, presence: true, numericality: true
   validates_associated :user
   validates_associated :course
+
 end
