@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 intro_cs:
+  id: 1
   prefix: CSCI
   code: 1100
   description: An introduction to computer science.

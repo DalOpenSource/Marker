@@ -4,7 +4,7 @@ class Role < ActiveRecord::Base
   enum title: [:student, :marker, :instructor]
   belongs_to :course
   belongs_to :user
-  validates :title, presence: true, numericality: true, inclusion: { in: Role.titles }
+  validates :title, presence: true, inclusion: { in: Role.titles }
   validates :course_id, presence: true, numericality: true
   validates :user_id, presence: true, numericality: true
   validates_associated :user

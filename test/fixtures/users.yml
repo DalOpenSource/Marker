@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 david:
+  id: 1
   email: david@me.com
   username: davidme
   encrypted_password: <%= Devise.bcrypt(User, 'password') %>
