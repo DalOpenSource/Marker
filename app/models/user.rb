@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable, :authentication_keys => [:username]
   has_many :roles
   has_many :courses, :through => :roles
-  validates :username, :presence => true, :uniqueness => { :case_sensitive => false }
+  validates :username, presence: true, uniqueness: { :case_sensitive => false }
 end
