@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20150611145301) do
     t.datetime "updated_at",           null: false
   end
 
+  add_index "roles", ["course_id"], name: "index_roles_on_course_id", using: :btree
+  add_index "roles", ["user_id"], name: "index_roles_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
