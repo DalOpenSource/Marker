@@ -8,7 +8,11 @@
     </div>
     <div class="panel-body">
       <p><%= course.description %></p>
-      <p><em>Role(s)</em>: <% current_user.roles.each do |role| %><span class="label label-primary"><%= role.title.humanize %></span><% end %></p>
+      <p><em>Role(s)</em>:
+        <% course.roles.each do |role| %>
+        <span class="label label-primary"><%= role.title.humanize %></span> 
+        <% end %>
+      </p>
     </div>
   </div>
 <% end %>
