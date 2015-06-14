@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150611145301) do
     t.string  "name",        limit: 255
     t.text    "description", limit: 65535
     t.integer "year",        limit: 4
-    t.integer "semester",    limit: 4
+    t.integer "semester",    limit: 4,     default: 2
     t.integer "section",     limit: 4
   end
 
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20150611145301) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "roles", ["course_id"], name: "index_roles_on_course_id", using: :btree
+  add_index "roles", ["user_id"], name: "index_roles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
