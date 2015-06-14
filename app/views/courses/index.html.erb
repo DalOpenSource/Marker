@@ -9,7 +9,7 @@
     <div class="panel-body">
       <p><%= course.description %></p>
       <p><em>Role(s)</em>:
-        <% course.roles.each do |role| %>
+        <% course.roles.where(user: current_user).each do |role| %>
         <span class="label label-primary"><%= role.title.humanize %></span> 
         <% end %>
       </p>
