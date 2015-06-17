@@ -1,4 +1,4 @@
-<% unless Course.all.empty? %>
+<% unless Course.all.empty? %> <!-- TODO: Change to be personal. -->
 <p>You are currently associated with the following courses.</p>
 
 <% @courses.each do |course| %>
@@ -9,9 +9,6 @@
     <div class="panel-body">
       <p><%= course.description %></p>
       <p><em>Role(s)</em>:
-        <% course.roles.where(user: current_user).each do |role| %>
-        <span class="label label-primary"><%= role.title.humanize %></span> 
-        <% end %>
       </p>
     </div>
   </div>
