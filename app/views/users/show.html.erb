@@ -1,0 +1,29 @@
+<div class="well panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 text-center">
+        <h2><%= @user.username %></h2>
+      </div>
+      <!--/col-->
+      <div class="col-xs-12 col-sm-6">
+        <p><strong>Email</strong>: <%= @user.email %></p>
+        <p><strong>Courses:</strong></p>
+        <ul>
+          <% @courses.each do |course| %>
+          <li><%= link_to course, course %>
+            <% course.roles.where(user: @user).each do |role| %>
+            <span class="label label-primary"><%= role.title.humanize %></span>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <!--/col-->
+      <div class="col-xs-12 col-sm-2">
+        <% if @user == current_user %><button class="btn btn-block btn-primary">Edit Profile</button><% end %> <!-- Needs Wiring -->
+        
+      </div>
+      <!--/col-->
+    </div>
+  </div>
+</div>
