@@ -2,10 +2,11 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-12 col-sm-4 text-center">
-        <h2><%= @user.username %></h2>
+        <h2><%= @user %></h2>
       </div>
       <!--/col-->
       <div class="col-xs-12 col-sm-6">
+        <p><strong>Banner ID</strong>: <%= @user.banner_id %></p>
         <p><strong>Email</strong>: <%= @user.email %></p>
         <p><strong>Courses:</strong></p>
         <ul>

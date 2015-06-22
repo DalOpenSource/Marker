@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
   has_many :courses, :through => :permissions
   validates :username, presence: true, uniqueness: { :case_sensitive => false }
   
+  # i.e. "George Louis Costanza"
+  def to_s
+    "#{first_name} #{middle_name} #{last_name}"
+  end
+
 end
