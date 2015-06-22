@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @courses = @user.courses.includes(:roles).all
+    @courses = @user.courses
+    @permissions = @user.permissions
   end
 
 end
