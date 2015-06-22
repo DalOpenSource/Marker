@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20150620133953) do
   end
 
   create_table "permissions", force: :cascade do |t|
-    t.integer  "course_id",  limit: 4
-    t.integer  "user_id",    limit: 4
-    t.boolean  "attends",    limit: 1
-    t.boolean  "marks",      limit: 1
-    t.boolean  "edits",      limit: 1
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "course_id",  limit: 4,                 null: false
+    t.integer  "user_id",    limit: 4,                 null: false
+    t.boolean  "can_attend", limit: 1, default: true
+    t.boolean  "can_mark",   limit: 1, default: false
+    t.boolean  "can_edit",   limit: 1, default: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "permissions", ["course_id"], name: "index_permissions_on_course_id", using: :btree
