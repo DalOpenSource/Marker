@@ -11,9 +11,6 @@
         <ul>
           <% @courses.each do |course| %>
           <li><%= link_to course, course %>
-            <% course.roles.where(user: @user).each do |role| %>
-            <span class="label label-primary"><%= role.title.humanize %></span>
-            <% end %>
           </li>
           <% end %>
         </ul>
