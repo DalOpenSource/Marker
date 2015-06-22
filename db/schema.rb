@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150620133953) do
     t.string  "name",        limit: 255
     t.text    "description", limit: 65535
     t.integer "year",        limit: 4
-    t.integer "semester",    limit: 4
+    t.integer "semester",    limit: 4,     default: 2
     t.integer "section",     limit: 4
   end
 

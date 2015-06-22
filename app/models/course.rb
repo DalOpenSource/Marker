@@ -16,5 +16,5 @@ class Course < ActiveRecord::Base
   def to_s
     "#{prefix} #{code} - #{name}"
   end
-
+  
 end
