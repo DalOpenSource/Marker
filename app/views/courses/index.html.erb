@@ -1,4 +1,4 @@
-<% unless Course.all.empty? %> <!-- TODO: Change to be personal. -->
+<% unless @courses.empty? %>
 <p>You are currently associated with the following courses.</p>
 
 <% @courses.each do |course| %>
