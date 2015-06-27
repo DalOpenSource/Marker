@@ -1,0 +1,13 @@
+<h2>Edit Profile</h2>
+
+<div class="panel-body">
+
+  <%= form_for(@user, url: user_update_path(@user), html: { method: :put, class: 'form' } ) do |f| -%>
+
+    <div class="form-group">
+      <%= f.submit "Apply Changes", class: 'btn btn-primary' %>
+    </div>
+
+  <% end -%>
+    
+</div>

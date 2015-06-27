@@ -1,42 +1,30 @@
-<h2>Edit Profile</h2>
+<h2>Change Password</h2>
 
-<div class="well panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 text-center">
-        <h2><%= @user %></h2>
-        <p><strong>Banner ID</strong>: <%= @user.banner_id %></p>
-      </div>
-      <!--/col-->
-      <div class="col-xs-12 col-sm-8">
+<div class="panel-body">
 
-        <%= form_for(resource, as: resource_name, url: user_registration_path(resource), html: { method: :put, class: 'form' } ) do |f| -%>
+  <%= form_for(resource, as: resource_name, url: user_registration_path(resource), html: { method: :put, class: 'form' } ) do |f| -%>
 
-          <%= devise_error_messages! %>
+    <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <%= f.label :current_password, "Current Password", class: 'control-label' %>
-            <%= f.password_field :current_password, autofocus: true, class: 'form-control' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password, "New Password", class: 'control-label' %>
-            <%= f.password_field :password, class: 'form-control' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password_confirmation, "Confirm Password", class: 'control-label' %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.submit "Apply Changes", class: 'btn btn-primary' %>
-          </div>
-
-        <% end -%>
-
-      </div>
-      <!--/col-->
+    <div class="form-group">
+      <%= f.label :current_password, "Current Password", class: 'control-label' %>
+      <%= f.password_field :current_password, autofocus: true, class: 'form-control' %>
     </div>
-  </div>
+
+    <div class="form-group">
+      <%= f.label :password, "New Password", class: 'control-label' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm Password", class: 'control-label' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Apply Changes", class: 'btn btn-primary' %>
+    </div>
+
+  <% end -%>
+    
 </div>

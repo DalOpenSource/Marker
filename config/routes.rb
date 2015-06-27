@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, skip: :registrations
   as :user do
-    get 'users/edit' => 'devise/registrations#edit', as: 'edit_user_registration'
-    put 'users/:id' => 'devise/registrations#update', as: 'user_registration'
+    get 'users/edit' => 'users#edit', as: 'edit_user'
+    get 'users/password' => 'devise/registrations#edit', as: 'edit_user_registration'
+    put 'users/:id' => 'users#update', as: 'user_update'
+    put 'users/password/:id' => 'devise/registrations#update', as: 'user_registration'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
