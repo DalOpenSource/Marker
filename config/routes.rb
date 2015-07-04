@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: :registrations
-  as :user do
-    get 'users/edit' => 'users#edit', as: 'edit_user'
-    get 'users/password' => 'devise/registrations#edit', as: 'edit_user_registration'
-    put 'users/:id' => 'users#update', as: 'user_update'
-    put 'users/password/:id' => 'devise/registrations#update', as: 'user_registration'
-  end
+  devise_for :users
+  resources :courses
+  resources :profiles
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'courses#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
@@ -18,8 +10,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :courses
-
 
   # Example resource route with options:
   #   resources :products do
