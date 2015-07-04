@@ -2,7 +2,7 @@
 
 <%= flash_messages %>
 
-<%= form_for(@user, url: user_update_path(@user), html: { method: :put, class: 'form' } ) do |f| -%>
+<%= form_for(@profile, html: { method: :put, class: 'form' } ) do |f| -%>
 
   <div class="form-group">
     <%= f.label :first_name, "First Name", class: 'control-label' %>
