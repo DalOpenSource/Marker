@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 
-  before_filter :authenticate_user!
+  include ApplicationHelper
 
   def edit
     @user = current_user
@@ -8,8 +8,13 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    current_user.profile.update(user_params) if user_signed_in?
-    redirect_to :back, notice: "Profile updated successfully."
+    @profile = current_user.profile
+    if @profile.update(user_params)
+      flash[:notice] = "Profile updated."
+    else
+      flash[:error] = errors_as_sentence @profile
+    end
+    render partial: 'partials/flash'
   end
 
   private

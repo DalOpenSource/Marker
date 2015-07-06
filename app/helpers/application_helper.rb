@@ -6,12 +6,15 @@ module ApplicationHelper
   
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in") do 
-              concat content_tag(:button, '&times;'.html_safe, class: "close", data: { dismiss: 'alert' })
-              concat message 
-            end)
+      concat render partial: 'partials/alert', locals: { message: message, bootstrap_class: bootstrap_class_for(msg_type) }
     end
+    flash.clear
     nil
+  end
+
+  # Returns all errors on an ActiveRecord object as a sentence.
+  def errors_as_sentence(obj)
+    obj.errors.full_messages.to_sentence
   end
 
 end

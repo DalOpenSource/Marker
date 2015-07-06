@@ -1,6 +1,6 @@
 <h2>Change Password</h2>
 
-<%= form_for(resource, as: resource_name, url: user_registration_path(resource), html: { method: :put, class: 'form' } ) do |f| -%>
+<%= form_for(resource, as: resource_name, remote: true, url: registration_path(resource), html: { method: :put, class: 'form' } ) do |f| -%>
 
   <%= devise_error_messages! %>
 
