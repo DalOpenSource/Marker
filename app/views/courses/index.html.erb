@@ -1,4 +1,6 @@
-<% unless Course.all.empty? %> <!-- TODO: Change to be personal. -->
+<%= flash_messages %>
+
+<% unless @courses.empty? %>
 <p>You are currently associated with the following courses.</p>
 
 <% @courses.each do |course| %>
@@ -8,8 +10,6 @@
     </div>
     <div class="panel-body">
       <p><%= course.description %></p>
-      <p><em>Role(s)</em>:
-      </p>
     </div>
   </div>
 <% end %>

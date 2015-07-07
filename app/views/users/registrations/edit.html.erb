@@ -1,35 +1,26 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Change Password</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form' }) do |f| %>
+<%= form_for(resource, as: resource_name, remote: true, url: registration_path(resource), html: { method: :put, class: 'form' } ) do |f| -%>
+
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <%= f.label :email, class: 'control-label' %>
-    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    <%= f.label :current_password, "Current Password", class: 'control-label' %>
+    <%= f.password_field :current_password, autofocus: true, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)<, class: 'control-label'/i>
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <%= f.label :password, "New Password", class: 'control-label' %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation, class: 'control-label' %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+    <%= f.label :password_confirmation, "Confirm Password", class: 'control-label' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :current_password, class: 'control-label' %> <i>*</i>
-    <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+    <%= f.submit "Apply Changes", class: 'btn btn-primary' %>
   </div>
 
-  <div class="form-group">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<% end -%>
