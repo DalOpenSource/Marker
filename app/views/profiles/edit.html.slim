@@ -7,6 +7,10 @@ h2.page-header Edit Profile
       = c.label :first_name, 'First Name', class: 'control-label'
       = c.text_field :first_name, required: true, class: 'form-control'
     .form-group
+      => c.label :middle_name, 'Middle Name', class: 'control-label'
+      em.text-muted Optional
+      = c.text_field :middle_name, class: 'form-control'
+    .form-group
       = c.label :last_name, 'Last Name', class: 'control-label'
       = c.text_field :last_name, required: true, class: 'form-control'
     .form-group
