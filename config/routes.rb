@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  devise_for :users, :controllers => { registrations: 'users/registrations' },
+    :path_names => { edit: '' }
   resources :courses
-  resources :profiles
+  resource :profile, only: [:edit, :update]
 
   root 'courses#index'
 
