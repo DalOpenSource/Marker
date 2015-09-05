@@ -1,5 +1,3 @@
-<%= flash_messages %>
-
 <% unless @courses.empty? %>
 <p>You are currently associated with the following courses.</p>
 
@@ -14,5 +12,5 @@
   </div>
 <% end %>
 <% else %>
-<div class="alert alert-info" role="alert">You are not associated with any courses.</div>
+<div class="alert alert-info" role="alert"><strong>You are not associated with any courses.</strong></div>
 <% end %>
