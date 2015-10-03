@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     if update_resource(current_user,account_update_params)
-      flash[:notice] = 'Password updated.'
+      flash[:notice] = 'Profile updated.'
     else
       flash[:error] = errors_as_sentence current_user
     end
